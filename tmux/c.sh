@@ -17,6 +17,8 @@ if [ $? != 0 ]; then
   tmux split-window -v -l 20% -t $SESSION_NAME:$MAIN_WINDOW_NAME
   # change cwd of the secondary pane
   tmux send-keys -t $SESSION_NAME:$MAIN_WINDOW_NAME.1 "cd $CWD" C-m 
+  # change focus back to main pane 
+  tmux select-pane -t $SESSION_NAME:$MAIN_WINDOW_NAME.0
 
 fi 
 
