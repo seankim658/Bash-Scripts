@@ -19,7 +19,7 @@ if [ $? != 0 ]; then
   # change cwd of the secondary window
   tmux send-keys -t $SESSION_NAME:$SECOND_WINDOW_NAME "cd $CWD" C-m 
   # change focus back to main window 
-  tmux select-pane -t $SESSION_NAME:$MAIN_WINDOW_NAME
+  tmux select-window -t $SESSION_NAME:$MAIN_WINDOW_NAME
 
 fi 
 
