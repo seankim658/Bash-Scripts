@@ -3,7 +3,7 @@
 SESSION_NAME="win_def"
 MAIN_WINDOW_NAME="main_win"
 SECOND_WINDOW_NAME="sec_win"
-CWD="~/projects/"
+CWD=$(pwd)
 
 # check if the session already exists, supressing output
 tmux has-session -t $SESSION_NAME &> /dev/null 
