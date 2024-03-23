@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 SESSION_NAME="win_def"
 MAIN_WINDOW_NAME="main_win"
