@@ -13,8 +13,12 @@ fi
 selected_name=$(basename $"$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+if [[ -z $TMUX ]]; then
+  if tmux has-session -t=$selected_name 2> /dev/null; then
+      tmux attach-session -t $selected_name
+  else
     tmux new-session -s $selected_name -c $selected
+  fi
     exit 0
 fi
 
